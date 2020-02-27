@@ -72,7 +72,7 @@ if (!isset($_SERVER['SERVER_NAME'])) {
  */
 Config::define('CONTENT_DIR', '/wp-content');
 Config::define('WP_CONTENT_DIR', $webroot_dir . Config::get('CONTENT_DIR'));
-Config::define('WP_CONTENT_URL', Config::get('WP_HOME') . Config::get('CONTENT_DIR'));
+Config::define('WP_CONTENT_URL', env('WP_CONTENT_URL') ? env('WP_CONTENT_URL') : Config::get('WP_HOME') . Config::get('CONTENT_DIR'));
 
 /**
  * DB settings
