@@ -29,6 +29,14 @@ function is_cli()
 /**
  * @return bool
  */
+function is_webp_support()
+{
+    return strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false || strpos($_SERVER['HTTP_USER_AGENT'], ' Chrome/') !== false;
+}
+
+/**
+ * @return bool
+ */
 function is_ajax()
 {
     return (is_wp_ajax() ||
