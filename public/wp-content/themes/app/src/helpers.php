@@ -54,6 +54,7 @@ function renderImage($attachment_id, $size = 'full', $retina = false, $alt = '')
 
     if ($imageType == 'image/svg+xml') {
         echo $originalImgHtml;
+        return;
     }
 
     $output = '<picture>';
