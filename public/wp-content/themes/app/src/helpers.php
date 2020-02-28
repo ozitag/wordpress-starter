@@ -53,7 +53,7 @@ function renderImage($attachment_id, $size = 'full', $retina = false, $alt = '')
     $originalImgHtml = '<img class="lazy" data-original="' . $original . '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="' . $alt . '">';
 
     if ($imageType == 'image/svg+xml') {
-        return $originalImgHtml;
+        echo $originalImgHtml;
     }
 
     $output = '<picture>';
