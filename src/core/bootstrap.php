@@ -1,6 +1,6 @@
 <?php
 
-namespace OziTag\Wordpress;
+namespace OziTag\lib;
 
 #$container = require __DIR__ . '/container.php';
 

@@ -54,10 +54,10 @@ Config::define('WP_DEFAULT_THEME', 'app');
  * URLs
  */
 Config::define('WP_HOME', env('WP_HOME')
-    ?: (!empty($_SERVER['HTTP_HOST']) ? (OziTag\Wordpress\is_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] : ''));
+    ?: (!empty($_SERVER['HTTP_HOST']) ? (OziTag\lib\is_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] : ''));
 
 Config::define('WP_SITEURL', env('WP_SITEURL')
-    ?: (!empty($_SERVER['HTTP_HOST']) ? (OziTag\Wordpress\is_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/wp' : '')
+    ?: (!empty($_SERVER['HTTP_HOST']) ? (OziTag\lib\is_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/wp' : '')
     ?: Config::get('WP_HOME') . '/wp');
 
 /**

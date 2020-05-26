@@ -19,7 +19,7 @@ function register_my_menu()
 }
 
 add_filter('body_class', function ($classes) {
-    if (\OziTag\Wordpress\is_webp_support()) {
+    if (\OziTag\lib\is_webp_support()) {
         $classes[] = 'webp';
     }
 
