@@ -81,7 +81,7 @@ function renderIcon($icon)
 {
     echo '<svg class="icon icon-' . $icon . '">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="' . get_template_directory_uri() . '/html/dist/static/images/svg/spriteInline.svg#' . $icon . '"/>
+                             xlink:href="' . get_template_directory_uri() . '/html/dist/assets/images/spriteInline.svg#' . $icon . '"/>
                     </svg>';
 }
 
