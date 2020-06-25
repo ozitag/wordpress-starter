@@ -89,3 +89,45 @@ function renderTemplate($template_name)
 {
     get_template_part('templates/' . $template_name);
 }
+
+/**
+ * @param $template
+ * @return \WP_Post
+ */
+function getPageByTemplate($template)
+{
+    $pages = get_pages(array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => $template . '.php'
+    ));
+
+    return count($pages) ? $pages[0] : null;
+}
+
+function render($template, $params = [], $return = false)
+{
+    foreach ($params as $param => $value) {
+        set_query_var($param, $value);
+    }
+
+    if ($return) {
+        ob_start();
+    }
+
+    get_template_part('templates/' . $template);
+
+    if ($return) {
+        $var = ob_get_contents();
+        ob_end_clean();
+        return $var;
+    }
+}
+
+
+/**
+ * @return int
+ */
+function getHomePageId()
+{
+    return (int)get_option('page_on_front');
+}
