@@ -8,8 +8,8 @@ mv .env.development .env
 mv src/.env.development src/.env
 
 cd src/public/wp-content/themes/app/html
-yarn install
-yarn build
+sudo -u www-data yarn install
+sudo -u www-data yarn build
 
 cd {{PROJECT_PATH}}
 sudo docker-compose -f docker-compose.dev.yml --project-name {{PROJECT_NAME}} up --build --force-recreate -d
