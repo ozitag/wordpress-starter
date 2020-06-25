@@ -30,8 +30,6 @@
 
 # Dotenv
 /.env
-/.env.*
-!/.env.example
 
 # Composer
 /vendor/*
@@ -39,3 +37,5 @@
 
 # WP-CLI
 wp-cli.local.yml
+
+public/wp-content/themes/app/html/dist

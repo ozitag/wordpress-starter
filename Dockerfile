@@ -5,6 +5,9 @@ WORKDIR /var/www/app
 COPY /src/composer.json composer.json
 COPY /src/composer.lock composer.lock
 
+COPY /src .
+
 RUN composer i  --ignore-platform-reqs
 
-COPY /src .
+RUN chmod 777 -R public/wp-content/uploads
+RUN chmod 777 -R public/wp-content/cache
