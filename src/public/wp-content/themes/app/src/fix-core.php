@@ -47,14 +47,6 @@ function my_wpcf7_form_autocomplete()
     return 'off';
 }
 
-if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
-function my_jquery_enqueue()
-{
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', false, false, null);
-    wp_enqueue_script('jquery');
-}
-
 function my_search(WP_Query $query)
 {
     if ($query->is_search) {
