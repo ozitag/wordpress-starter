@@ -96,6 +96,36 @@ function renderIcon($icon)
                     </svg>';
 }
 
+function renderSvgImageAsInline($attachment_id)
+{
+    if (!$attachment_id) return;
+
+    $imageType = get_post_mime_type($attachment_id);
+    if ($imageType != 'image/svg+xml') {
+        renderImage($attachment_id);
+        return;
+    }
+
+    $attachment = wp_get_attachment_metadata($attachment_id);
+
+    $filePath = null;
+    if (isset($attachment['sizes'])) {
+        $filePath = get_attached_file($attachment_id);
+    } else {
+        $filePath = wp_upload_dir()['basedir'] . '/' . $attachment['file'];
+    }
+
+    if (!$filePath || !is_file($filePath)) {
+        return;
+    }
+
+    $f = fopen($filePath, 'r+');
+    $raw = fread($f, filesize($filePath));
+    fclose($f);
+
+    echo $raw;
+}
+
 function renderTemplate($template_name)
 {
     get_template_part('templates/' . $template_name);
