@@ -12,6 +12,9 @@ git clean -f -d
 mv .env.production .env
 mv src/.env.production src/.env
 
+sudo apt install nodejs
+sudo apt install npm
+sudo npm install -g yarn
 cd src/public/wp-content/themes/app/html
 yarn install
 yarn build
