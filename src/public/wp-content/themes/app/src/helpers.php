@@ -88,6 +88,26 @@ function renderImage($attachment_id, $size = 'full', $retina = false, $alt = '')
     echo $output;
 }
 
+function renderHtmlImage($image, $ext = 'png', $has2x = true, $hasWebp = true)
+{
+    $dir = get_template_directory_uri() . '/html/dist/assets/images/';
+    $imagePath = $dir . $image;
+
+    echo '<picture>';
+
+    if ($hasWebp) {
+        echo '<source data-srcset="' . $imagePath . '.webp' . ($has2x ? ', ' . $imagePath . '@2x.webp 2x' : '') . ' type="image/webp">';
+    }
+
+    $mimeType = $ext == 'png' ? 'image/png' : 'image/jpeg';
+    echo '<source data-srcset="' . $imagePath . '.' . $ext . ($has2x ? ', ' . $imagePath . '@2x.webp 2x' : '') . ' type="' . $mimeType . '">';
+
+    echo '<img class="lazy" data-sizes="auto" data-original="' . $imagePath . '.' . $ext . '"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt>';
+
+    echo '</picture>';
+}
+
 function renderIcon($icon)
 {
     echo '<svg class="icon icon-' . $icon . '">
