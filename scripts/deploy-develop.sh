@@ -8,6 +8,7 @@ mv .env.development .env
 mv src/.env.development src/.env
 
 cd src/public/wp-content/themes/app/html
+sudo apt-get -y install libjpeg-dev libpng-dev libtiff-dev libgif-dev
 sudo -u www-data yarn install
 sudo -u www-data yarn build
 

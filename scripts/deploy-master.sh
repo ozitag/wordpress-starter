@@ -16,6 +16,7 @@ sudo apt install nodejs
 sudo apt install npm
 sudo npm install -g yarn
 cd src/public/wp-content/themes/app/html
+sudo apt-get -y install libjpeg-dev libpng-dev libtiff-dev libgif-dev
 yarn install
 yarn build
 
