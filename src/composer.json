@@ -72,7 +72,7 @@
   },
   "extra": {
     "wordpress-languages": [
-      "en_US",
+      "en",
       "ru_RU"
     ],
     "installer-paths": {
