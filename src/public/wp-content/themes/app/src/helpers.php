@@ -88,19 +88,31 @@ function renderImage($attachment_id, $size = 'full', $retina = false, $alt = '')
     echo $output;
 }
 
-function renderHtmlImage($image, $ext = 'png', $has2x = true, $hasWebp = true)
+function renderHtmlImage($image, $ext = 'png')
 {
-    $dir = get_template_directory_uri() . '/html/dist/assets/images/';
-    $imagePath = $dir . $image;
+    $dirPath = get_template_directory() . '/html/dist/assets/images';
+
+    $imagePath = $dirPath . '/' . $image . '.' . $ext;
+    if (!is_file($imagePath)) {
+        return;
+    }
+
+    $image2xPath = $dirPath . '/' . $image . '@2x.' . $ext;
+    $has2x = is_file($image2xPath);
+
+    $imageWebpPath = $dirPath . '/' . $image . '.webp';
+    $hasWebp = is_file($imageWebpPath);
+
+    $imageUri = get_template_directory_uri() . '/html/dist/assets/images/' . $image;
 
     echo '<picture>';
 
     if ($hasWebp) {
-        echo '<source data-srcset="' . $imagePath . '.webp' . ($has2x ? ', ' . $imagePath . '@2x.webp 2x' : '') . ' type="image/webp">';
+        echo '<source data-srcset="' . $imageUri . '.webp' . ($has2x ? ', ' . $imageUri . '@2x.webp 2x' : '') . '" type="image/webp">';
     }
 
     $mimeType = $ext == 'png' ? 'image/png' : 'image/jpeg';
-    echo '<source data-srcset="' . $imagePath . '.' . $ext . ($has2x ? ', ' . $imagePath . '@2x.webp 2x' : '') . ' type="' . $mimeType . '">';
+    echo '<source data-srcset="' . $imageUri . '.' . $ext . ($has2x ? ', ' . $imageUri . '@2x.'.$ext.' 2x' : '') . '" type="' . $mimeType . '">';
 
     echo '<img class="lazy" data-sizes="auto" data-original="' . $imagePath . '.' . $ext . '"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt>';
