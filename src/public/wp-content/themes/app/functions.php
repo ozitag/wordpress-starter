@@ -7,6 +7,6 @@ require_once __DIR__ . '/src/init.php';
 require_once __DIR__ . '/src/helpers.php';
 require_once __DIR__ . '/src/ajax.php';
 
-if (WP_ENV !== 'local') {
+if (WP_ENV != 'local' || DB_HOST != 'db') {
     require_once __DIR__ . '/src/acf.php';
 }
