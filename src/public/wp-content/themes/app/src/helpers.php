@@ -88,6 +88,14 @@ function renderImage($attachment_id, $size = 'full', $retina = false, $alt = '')
     echo $output;
 }
 
+function renderIcon($icon)
+{
+    echo '<svg class="icon icon-' . $icon . '">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="' . get_template_directory_uri() . '/html/dist/assets/images/spriteInline.svg#' . $icon . '"/>
+                    </svg>';
+}
+
 function renderHtmlImage($image, $ext = 'png')
 {
     $dirPath = get_template_directory() . '/html/dist/assets/images';
@@ -114,18 +122,10 @@ function renderHtmlImage($image, $ext = 'png')
     $mimeType = $ext == 'png' ? 'image/png' : 'image/jpeg';
     echo '<source data-srcset="' . $imageUri . '.' . $ext . ($has2x ? ', ' . $imageUri . '@2x.'.$ext.' 2x' : '') . '" type="' . $mimeType . '">';
 
-    echo '<img class="lazy" data-sizes="auto" data-original="' . $imagePath . '.' . $ext . '"
+    echo '<img class="lazy" data-sizes="auto" data-original="' . $imageUri . '.' . $ext . '"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt>';
 
     echo '</picture>';
-}
-
-function renderIcon($icon)
-{
-    echo '<svg class="icon icon-' . $icon . '">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                             xlink:href="' . get_template_directory_uri() . '/html/dist/assets/images/spriteInline.svg#' . $icon . '"/>
-                    </svg>';
 }
 
 function renderSvgImageAsInline($attachment_id)
