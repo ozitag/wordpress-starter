@@ -171,7 +171,8 @@ function getPageByTemplate($template)
 {
     $pages = get_pages(array(
         'meta_key' => '_wp_page_template',
-        'meta_value' => $template . '.php'
+        'meta_value' => mb_substr($template, -4) === '.php' ? $template : $template . '.php',
+        'hierarchical' => 0
     ));
 
     return count($pages) ? $pages[0] : null;
