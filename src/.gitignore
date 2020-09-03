@@ -39,3 +39,4 @@
 wp-cli.local.yml
 
 public/wp-content/themes/app/html/dist
+public/wp-content/themes/app/html/node_modules
