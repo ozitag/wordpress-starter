@@ -74,7 +74,11 @@ function yoasttobottom()
 
 add_filter('wpseo_metabox_prio', 'yoasttobottom');
 
-add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
+function my_wp_mail_content_type()
+{
+    return "text/html";
+}
+add_filter('wp_mail_content_type', 'my_wp_mail_content_type');
 
 /**
  * https://wordpress.org/support/topic/error-with-image-uploading/
