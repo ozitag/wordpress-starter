@@ -75,3 +75,12 @@ function yoasttobottom()
 add_filter('wpseo_metabox_prio', 'yoasttobottom');
 
 add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
+
+/**
+ * https://wordpress.org/support/topic/error-with-image-uploading/
+ */
+function use_gd_editor($array)
+{
+    return ['WP_Image_Editor_GD'];
+}
+add_filter('wp_image_editors', 'use_gd_editor');
