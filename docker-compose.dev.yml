@@ -24,6 +24,7 @@ services:
       PHP_POST_MAX_SIZE: 500M
       PHP_MAX_EXECUTION_TIME: 18000dc
       php.short_open_tag: "on"
+      SERVICE_NGINX_CLIENT_MAX_BODY_SIZE: "500M"
   db:
     container_name: ${APP_NAME}-db
     image: mysql:5.7
