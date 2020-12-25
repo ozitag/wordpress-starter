@@ -16,6 +16,9 @@
 /public/wp-content/plugins/*
 !/public/wp-content/plugins/.gitkeep
 !/public/wp-content/plugins/advanced-custom-fields-pro/
+!/public/wp-content/plugins/wpml-string-translation/
+!/public/wp-content/plugins/sitepress-multilingual-cms/
+!/public/wp-content/plugins/acf-php-recovery.php
 
 /public/wp-content/upgrade/*
 !/public/wp-content/upgrade/.gitkeep
