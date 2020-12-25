@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/html/dist/css/main.css?v=374">
     <link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/custom.css">
 
-    <? wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div class="preloader js-preloader"></div>
