@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields PRO\n"
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
-"POT-Creation-Date: 2020-08-11 14:31+0100\n"
-"PO-Revision-Date: 2020-08-11 14:31+0100\n"
+"POT-Creation-Date: 2020-08-17 12:32+0100\n"
+"PO-Revision-Date: 2020-08-17 12:32+0100\n"
 "Last-Translator: Pedro Mendonça <ped.gaspar@gmail.com>\n"
 "Language-Team: Pedro Mendonça <ped.gaspar@gmail.com>\n"
 "Language: pt_PT\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Textdomain-Support: yes\n"
@@ -435,7 +435,7 @@ msgid_plural "%s field groups synchronised."
 msgstr[0] "Grupo de campos sincronizado."
 msgstr[1] "%s grupos de campos sincronizados."
 
-#: includes/admin/admin-field-groups.php:790
+#: includes/admin/admin-field-groups.php:794
 #, php-format
 msgid "Select %s"
 msgstr "Seleccionar %s"
@@ -465,8 +465,8 @@ msgid "Overview"
 msgstr "Visão geral"
 
 #: includes/admin/admin.php:131
-msgid "The Advanced Custom Fields plugin provides a visual form builder to customize WordPress edit screens with extra content fields, and an intuitive API to display custom field values in any theme template file."
-msgstr "O plugin Advanced Custom Fields fornece-lhe um construtor visual de formulários para personalizar os ecrãs de edição do WordPress com campos adicionais de conteúdo, e uma interface intuitiva para mostrar os valores dos campos personalizados em qualquer ficheiro de modelo de tema."
+msgid "The Advanced Custom Fields plugin provides a visual form builder to customize WordPress edit screens with extra fields, and an intuitive API to display custom field values in any theme template file."
+msgstr "O plugin Advanced Custom Fields fornece-lhe um construtor visual de formulários para personalizar os ecrãs de edição do WordPress com campos adicionais, e uma interface intuitiva para mostrar os valores dos campos personalizados em qualquer ficheiro de modelo de tema."
 
 #: includes/admin/admin.php:133
 #, php-format
@@ -1091,13 +1091,13 @@ msgstr "Tem a certeza?"
 
 #: includes/assets.php:344 includes/fields/class-acf-field-true_false.php:79
 #: includes/fields/class-acf-field-true_false.php:159
-#: pro/admin/views/html-settings-updates.php:89
+#: pro/admin/views/html-settings-updates.php:88
 msgid "Yes"
 msgstr "Sim"
 
 #: includes/assets.php:345 includes/fields/class-acf-field-true_false.php:80
 #: includes/fields/class-acf-field-true_false.php:174
-#: pro/admin/views/html-settings-updates.php:99
+#: pro/admin/views/html-settings-updates.php:98
 msgid "No"
 msgstr "Não"
 
@@ -1262,7 +1262,7 @@ msgstr "Permitir nulo?"
 #: includes/fields/class-acf-field-textarea.php:102
 #: includes/fields/class-acf-field-true_false.php:135
 #: includes/fields/class-acf-field-url.php:100
-#: includes/fields/class-acf-field-wysiwyg.php:366
+#: includes/fields/class-acf-field-wysiwyg.php:371
 msgid "Default Value"
 msgstr "Valor por omissão"
 
@@ -1274,7 +1274,7 @@ msgstr "Valor por omissão"
 #: includes/fields/class-acf-field-text.php:96
 #: includes/fields/class-acf-field-textarea.php:103
 #: includes/fields/class-acf-field-url.php:101
-#: includes/fields/class-acf-field-wysiwyg.php:367
+#: includes/fields/class-acf-field-wysiwyg.php:372
 msgid "Appears when creating a new post"
 msgstr "Mostrado ao criar um novo conteúdo"
 
@@ -2406,48 +2406,48 @@ msgstr "Erro ao carregar campo."
 msgid "Wysiwyg Editor"
 msgstr "Editor wysiwyg"
 
-#: includes/fields/class-acf-field-wysiwyg.php:315
+#: includes/fields/class-acf-field-wysiwyg.php:320
 msgid "Visual"
 msgstr "Visual"
 
-#: includes/fields/class-acf-field-wysiwyg.php:316
+#: includes/fields/class-acf-field-wysiwyg.php:321
 msgctxt "Name for the Text editor tab (formerly HTML)"
 msgid "Text"
 msgstr "HTML"
 
-#: includes/fields/class-acf-field-wysiwyg.php:322
+#: includes/fields/class-acf-field-wysiwyg.php:327
 msgid "Click to initialize TinyMCE"
 msgstr "Clique para inicializar o TinyMCE"
 
-#: includes/fields/class-acf-field-wysiwyg.php:375
+#: includes/fields/class-acf-field-wysiwyg.php:380
 msgid "Tabs"
 msgstr "Separadores"
 
-#: includes/fields/class-acf-field-wysiwyg.php:380
+#: includes/fields/class-acf-field-wysiwyg.php:385
 msgid "Visual & Text"
 msgstr "Visual e HTML"
 
-#: includes/fields/class-acf-field-wysiwyg.php:381
+#: includes/fields/class-acf-field-wysiwyg.php:386
 msgid "Visual Only"
 msgstr "Apenas visual"
 
-#: includes/fields/class-acf-field-wysiwyg.php:382
+#: includes/fields/class-acf-field-wysiwyg.php:387
 msgid "Text Only"
 msgstr "Apenas HTML"
 
-#: includes/fields/class-acf-field-wysiwyg.php:389
+#: includes/fields/class-acf-field-wysiwyg.php:394
 msgid "Toolbar"
 msgstr "Barra de ferramentas"
 
-#: includes/fields/class-acf-field-wysiwyg.php:404
+#: includes/fields/class-acf-field-wysiwyg.php:409
 msgid "Show Media Upload Buttons?"
 msgstr "Mostrar botões de carregar multimédia?"
 
-#: includes/fields/class-acf-field-wysiwyg.php:414
+#: includes/fields/class-acf-field-wysiwyg.php:419
 msgid "Delay initialization?"
 msgstr "Atrasar a inicialização?"
 
-#: includes/fields/class-acf-field-wysiwyg.php:415
+#: includes/fields/class-acf-field-wysiwyg.php:420
 msgid "TinyMCE will not be initialized until field is clicked"
 msgstr "O TinyMCE não será inicializado até que clique no campo"
 
@@ -2573,23 +2573,23 @@ msgstr "Modelo por omissão"
 msgid "Page Type"
 msgstr "Tipo de página"
 
-#: includes/locations/class-acf-location-page-type.php:105
+#: includes/locations/class-acf-location-page-type.php:106
 msgid "Front Page"
 msgstr "Página inicial"
 
-#: includes/locations/class-acf-location-page-type.php:106
+#: includes/locations/class-acf-location-page-type.php:107
 msgid "Posts Page"
 msgstr "Página de artigos"
 
-#: includes/locations/class-acf-location-page-type.php:107
+#: includes/locations/class-acf-location-page-type.php:108
 msgid "Top Level Page (no parent)"
 msgstr "Página de topo (sem superior)"
 
-#: includes/locations/class-acf-location-page-type.php:108
+#: includes/locations/class-acf-location-page-type.php:109
 msgid "Parent Page (has children)"
 msgstr "Página superior (tem dependentes)"
 
-#: includes/locations/class-acf-location-page-type.php:109
+#: includes/locations/class-acf-location-page-type.php:110
 msgid "Child Page (has parent)"
 msgstr "Página dependente (tem superior)"
 
@@ -2682,7 +2682,7 @@ msgstr "Nenhum grupo de campos personalizado encontrado na página de opções. 
 msgid "<b>Error</b>. Could not connect to update server"
 msgstr "<b>Erro</b>. Não foi possível ligar ao servidor de actualização"
 
-#: pro/admin/admin-updates.php:118 pro/admin/views/html-settings-updates.php:13
+#: pro/admin/admin-updates.php:118 pro/admin/views/html-settings-updates.php:12
 msgid "Updates"
 msgstr "Actualizações"
 
@@ -2690,60 +2690,60 @@ msgstr "Actualizações"
 msgid "<b>Error</b>. Could not authenticate update package. Please check again or deactivate and reactivate your ACF PRO license."
 msgstr "<b>Erro</b>. Não foi possível autenticar o pacote de actualização. Por favor verifique de novo, ou desactive e reactive a sua licença do ACF PRO."
 
-#: pro/admin/views/html-settings-updates.php:7
+#: pro/admin/views/html-settings-updates.php:6
 msgid "Deactivate License"
 msgstr "Desactivar licença"
 
-#: pro/admin/views/html-settings-updates.php:7
+#: pro/admin/views/html-settings-updates.php:6
 msgid "Activate License"
 msgstr "Activar licença"
 
-#: pro/admin/views/html-settings-updates.php:17
+#: pro/admin/views/html-settings-updates.php:16
 msgid "License Information"
 msgstr "Informações da licença"
 
-#: pro/admin/views/html-settings-updates.php:20
+#: pro/admin/views/html-settings-updates.php:19
 #, php-format
 msgid "To unlock updates, please enter your license key below. If you don't have a licence key, please see <a href=\"%s\" target=\"_blank\">details & pricing</a>."
 msgstr "Para desbloquear as actualizações, por favor insira a sua chave de licença. Se não tiver uma chave de licença, por favor consulte os <a href=\"%s\" target=\"_blank\">detalhes e preços</a>."
 
-#: pro/admin/views/html-settings-updates.php:29
+#: pro/admin/views/html-settings-updates.php:28
 msgid "License Key"
 msgstr "Chave de licença"
 
-#: pro/admin/views/html-settings-updates.php:61
+#: pro/admin/views/html-settings-updates.php:60
 msgid "Update Information"
 msgstr "Informações de actualização"
 
-#: pro/admin/views/html-settings-updates.php:68
+#: pro/admin/views/html-settings-updates.php:67
 msgid "Current Version"
 msgstr "Versão actual"
 
-#: pro/admin/views/html-settings-updates.php:76
+#: pro/admin/views/html-settings-updates.php:75
 msgid "Latest Version"
 msgstr "Última versão"
 
-#: pro/admin/views/html-settings-updates.php:84
+#: pro/admin/views/html-settings-updates.php:83
 msgid "Update Available"
 msgstr "Actualização disponível"
 
-#: pro/admin/views/html-settings-updates.php:92
+#: pro/admin/views/html-settings-updates.php:91
 msgid "Update Plugin"
 msgstr "Actualizar plugin"
 
-#: pro/admin/views/html-settings-updates.php:94
+#: pro/admin/views/html-settings-updates.php:93
 msgid "Please enter your license key above to unlock updates"
 msgstr "Por favor, insira acima a sua chave de licença para desbloquear as actualizações"
 
-#: pro/admin/views/html-settings-updates.php:100
+#: pro/admin/views/html-settings-updates.php:99
 msgid "Check Again"
 msgstr "Verificar de novo"
 
-#: pro/admin/views/html-settings-updates.php:107
+#: pro/admin/views/html-settings-updates.php:106
 msgid "Changelog"
 msgstr "Registo de alterações"
 
-#: pro/admin/views/html-settings-updates.php:117
+#: pro/admin/views/html-settings-updates.php:116
 msgid "Upgrade Notice"
 msgstr "Informações sobre a actualização"
 
