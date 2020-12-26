@@ -21,7 +21,5 @@ if (!defined('SENTRY_LOADED') && getenv('SENTRY_DSN')) {
     ]);
 }
 
-require_once dirname(__DIR__) . '/core/helpers.php';
-require_once dirname(__DIR__) . '/core/bootstrap.php';
 require_once dirname(__DIR__) . '/config/application.php';
 require_once ABSPATH . 'wp-settings.php';
