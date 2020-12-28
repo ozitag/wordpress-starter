@@ -1,6 +1,6 @@
 <?php
 
-if (WP_ENV != 'local') {
+if (!defined('WP_ENV') || WP_ENV != 'local') {
     $acfFile = __DIR__ . '/App/ACF/acf.php';
     if (is_file($acfFile)) {
         require_once $acfFile;
