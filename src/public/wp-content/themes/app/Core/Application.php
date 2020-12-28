@@ -39,7 +39,7 @@ abstract class Application
     public function init()
     {
         add_action('wp_head', function () {
-            if (WP_ENV !== 'local') {
+            if (defined('WP_ENV') && WP_ENV !== 'local') {
                 $cssFile = $this->getCurrentCriticalCssFile();
 
                 if (!empty($cssFile)) {
@@ -122,10 +122,6 @@ abstract class Application
                 $wp_admin_bar->remove_menu('comments');
             });
         }
-
-        add_filter('theme_root_uri', function ($theme_root_uri) {
-            return env('WP_THEME_URI') ? env('WP_THEME_URI') : $theme_root_uri;
-        });
 
         remove_action('wp_head', 'print_emoji_detection_script', 7);
         remove_action('wp_print_styles', 'print_emoji_styles');
