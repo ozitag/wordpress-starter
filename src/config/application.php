@@ -178,7 +178,6 @@ Config::define('WPCF7_AUTOP', false);
  */
 Config::define('WP_DEBUG_DISPLAY', false);
 Config::define('SCRIPT_DEBUG', false);
-ini_set('display_errors', 0);
 
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 
