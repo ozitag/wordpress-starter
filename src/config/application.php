@@ -53,12 +53,29 @@ Config::define('WP_DEFAULT_THEME', 'app');
 /**
  * URLs
  */
+
+function is_my_ssl() {
+    if ( isset( $_SERVER['HTTPS'] ) ) {
+        if ( 'on' === strtolower( $_SERVER['HTTPS'] ) ) {
+            return true;
+        }
+
+        if ( '1' == $_SERVER['HTTPS'] ) {
+            return true;
+        }
+    } elseif ( isset( $_SERVER['SERVER_PORT'] ) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
+        return true;
+    }
+    return false;
+}
+
 Config::define('WP_HOME', env('WP_HOME')
-    ?: (!empty($_SERVER['HTTP_HOST']) ? (OziTag\lib\is_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] : ''));
+    ?: (!empty($_SERVER['HTTP_HOST']) ? (is_my_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] : ''));
 
 Config::define('WP_SITEURL', env('WP_SITEURL')
-    ?: (!empty($_SERVER['HTTP_HOST']) ? (OziTag\lib\is_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/wp' : '')
-    ?: Config::get('WP_HOME') . '/wp');
+    ?: (!empty($_SERVER['HTTP_HOST']) ? (is_my_ssl() ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/wp' : '')
+        ?: Config::get('WP_HOME') . '/wp');
+
 
 /**
  * WP-CLI

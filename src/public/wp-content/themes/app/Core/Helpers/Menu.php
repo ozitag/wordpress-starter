@@ -14,7 +14,7 @@ class Menu
         $menu_items = wp_get_nav_menu_items($menu->term_id);
 
         if (!$tree) {
-            return $menu_items;
+            return array_values($menu_items);
         }
 
         $root_items = array_filter($menu_items, function ($menu_item) {
