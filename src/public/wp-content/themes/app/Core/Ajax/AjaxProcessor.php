@@ -6,11 +6,17 @@ class AjaxProcessor
 {
     public static function sendResponse(Response $response)
     {
-        header('Content-Type: application/json');
         http_response_code($response->getStatusCode());
 
-        $data = $response->getData();
-        echo json_encode($data);
+        if ($response->isJson()) {
+            header('Content-Type: application/json');
+            $output = json_encode($response->getData());
+        } else if ($response->isHtml()) {
+            header('Content-Type: text/html');
+            $output = $response->getData();
+        }
+
+        echo $output;
 
         die;
     }

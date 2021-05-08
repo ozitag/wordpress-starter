@@ -9,7 +9,7 @@ class SuccessResponse extends Response
         return 200;
     }
 
-    public function getData(): array
+    public function getData()
     {
         return [
             'success' => true
