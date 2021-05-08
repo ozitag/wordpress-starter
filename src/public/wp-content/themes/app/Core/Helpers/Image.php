@@ -4,8 +4,16 @@ namespace Core\Helpers;
 
 class Image
 {
-    static function render(?int $attachmentId = null, ?string $size = 'full', bool $use2x = false, string $alt = '')
+    static function render($attachmentId = null, ?string $size = 'full', bool $use2x = false, string $alt = '')
     {
+        if (is_array($attachmentId)) {
+            if (isset($attachmentId['ID'])) {
+                $attachmentId = $attachmentId['ID'];
+            } else {
+                throw new \Exception('Invalid Image');
+            }
+        }
+
         if (!$attachmentId) return;
         if ($size === null) $size = 'full';
 
@@ -38,8 +46,24 @@ class Image
         echo $output;
     }
 
-    static function renderImageWithMobile(?int $attachmentId = null, ?int $mobileAttachmentId = null, ?string $size = null, ?string $mobileSize = null, bool $use2x = true, bool $mobileUse2x = true, string $alt = '')
+    static function renderImageWithMobile($attachmentId = null, $mobileAttachmentId = null, ?string $size = null, ?string $mobileSize = null, bool $use2x = true, bool $mobileUse2x = true, string $alt = '')
     {
+        if (is_array($attachmentId)) {
+            if (isset($attachmentId['ID'])) {
+                $attachmentId = $attachmentId['ID'];
+            } else {
+                throw new \Exception('Invalid Image');
+            }
+        }
+
+        if (is_array($mobileAttachmentId)) {
+            if (isset($mobileAttachmentId['ID'])) {
+                $mobileAttachmentId = $mobileAttachmentId['ID'];
+            } else {
+                throw new \Exception('Invalid Image');
+            }
+        }
+
         if (!$attachmentId) return;
 
         if ($size === null) $size = 'full';
