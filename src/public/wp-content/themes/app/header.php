@@ -16,5 +16,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="preloader js-preloader"></div>
+<?php if (WP_ENV !== 'local'): ?>
+    <div class="preloader js-preloader"></div>
+<?php endif; ?>
 <div class="page__inner">
