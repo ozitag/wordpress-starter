@@ -23,6 +23,8 @@
 /public/wp-content/upgrade/*
 !/public/wp-content/upgrade/.gitkeep
 
+/public/wp-content/autoptimize_404_handler.php
+
 # WordPress
 /public/wp/
 /public/.htaccess
