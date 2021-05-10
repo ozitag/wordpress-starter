@@ -48,6 +48,7 @@
     "wpackagist-plugin/wp-mail-smtp": "^2.1.1",
     "wpackagist-plugin/mailchimp-for-wp": "^4.8.1",
     "wpackagist-plugin/google-captcha": "^1.5.9",
+    "wpackagist-plugin/multiple-post-thumbnails": "^1.7",
 
     "sentry/sdk": "^2.0"
   },
