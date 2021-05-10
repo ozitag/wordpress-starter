@@ -4,6 +4,47 @@ namespace Core\Helpers;
 
 class Image
 {
+    static function renderSimpleImage($attachmentId, $attachment2xId = null, string $alt = '')
+    {
+        if (is_array($attachmentId)) {
+            if (isset($attachmentId['ID'])) {
+                $attachmentId = $attachmentId['ID'];
+            } else {
+                throw new \Exception('Invalid Image');
+            }
+        }
+
+        if (!$attachmentId) return;
+        $imageType = get_post_mime_type($attachmentId);
+        $original = wp_get_attachment_image_url($attachmentId, 'full');
+
+        $originalImgHtml = '<img class="lazy" data-sizes="auto" data-original="' . $original . '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="' . $alt . '">';
+        if ($imageType == 'image/svg+xml' || $imageType == 'image/svg') {
+            echo $originalImgHtml;
+            return;
+        }
+
+        if (!$attachment2xId) {
+            echo $originalImgHtml;
+            return;
+        }
+
+        $original2x = wp_get_attachment_image_url($attachment2xId, 'full');
+        if (!$original2x) {
+            echo $originalImgHtml;
+            return;
+        }
+
+        $output = '<picture>';
+        $srcset = $original . ' 1x, ' . $original2x . ' 2x';
+        $output .= '<source data-srcset="' . $srcset . '" type="' . $imageType . '">';
+
+        $output .= $originalImgHtml;
+        $output .= '</picture>';
+
+        echo $output;
+    }
+
     static function render($attachmentId = null, ?string $size = 'full', bool $use2x = false, string $alt = '')
     {
         if (is_array($attachmentId)) {
