@@ -169,5 +169,9 @@ abstract class Application
             wp_dequeue_style('wp-block-library-theme');
             wp_dequeue_style('wc-block-style');
         }, 100);
+
+        add_filter('protected_title_format', function () {
+            return __('%s');
+        });
     }
 }
