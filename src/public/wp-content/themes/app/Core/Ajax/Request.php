@@ -33,11 +33,42 @@ abstract class Request
         return $_SERVER['CONTENT_TYPE'];
     }
 
+    private function parseMultipartRequest()
+    {
+        $a_data = [];
+        $input = file_get_contents('php://input');
+        preg_match('/boundary=(.*)$/', $_SERVER['CONTENT_TYPE'], $matches);
+        $boundary = $matches[1];
+
+        $a_blocks = preg_split("/-+$boundary/", $input);
+        array_pop($a_blocks);
+
+        // loop data blocks
+        foreach ($a_blocks as $id => $block) {
+            if (empty($block)) continue;
+
+            // parse uploaded files
+            if (strpos($block, 'application/octet-stream') !== FALSE) {
+                preg_match("/name=\"([^\"]*)\".*stream[\n|\r]+([^\n\r].*)?$/s", $block, $matches);
+            } else {
+                preg_match('/name=\"([^\"]*)\"[\n|\r]+([^\n\r].*)?\r$/s', $block, $matches);
+            }
+
+            if (empty($matches)) continue;
+
+            $a_data[$matches[1]] = $matches[2];
+        }
+
+        return $a_data;
+    }
+
     private function loadData(): void
     {
         if ($this->getContentType() == 'application/json') {
             $entityBody = file_get_contents('php://input');
             $bodyParams = json_decode($entityBody, true);
+        } else if ($this->getContentType() == 'multipart/form-data' && empty($_POST)) {
+            $bodyParams = $this->parseMultipartRequest();
         } else {
             $bodyParams = $_POST;
         }
