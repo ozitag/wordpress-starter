@@ -6,7 +6,12 @@ class Menu
 {
     public static function getByThemeLocation(string $theme_location, bool $tree = false)
     {
-        $menu = get_term(get_nav_menu_locations()[$theme_location], 'nav_menu');
+        $menuLocations = get_nav_menu_locations();
+        if (!isset($menuLocations[$theme_location])) {
+            return null;
+        }
+
+        $menu = get_term($menuLocations[$theme_location], 'nav_menu');
         if (!$menu) {
             return null;
         }
