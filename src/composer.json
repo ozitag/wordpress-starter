@@ -38,7 +38,6 @@
     "wpackagist-plugin/disable-wordpress-updates": "^1.6",
     "wpackagist-plugin/duplicate-post": "^4.0",
     "wpackagist-plugin/hide-drafts-in-menus": "^1.2",
-    "wpackagist-plugin/resize-image-after-upload": "^1.8",
     "wpackagist-plugin/wordpress-seo": "^16.0",
     "wpackagist-plugin/safe-svg": "^1.9",
     "wpackagist-plugin/redirection": "^4.3",
@@ -46,9 +45,6 @@
     "wpackagist-plugin/taxonomy-terms-order": "^1.5",
     "wpackagist-plugin/post-types-order": "^1.9",
     "wpackagist-plugin/wp-mail-smtp": "^2.1.1",
-    "wpackagist-plugin/mailchimp-for-wp": "^4.8.1",
-    "wpackagist-plugin/google-captcha": "^1.5.9",
-    "wpackagist-plugin/multiple-post-thumbnails": "^1.7",
 
     "sentry/sdk": "^2.0"
   },

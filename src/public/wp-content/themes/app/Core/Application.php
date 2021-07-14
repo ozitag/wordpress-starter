@@ -173,5 +173,9 @@ abstract class Application
         add_filter('protected_title_format', function () {
             return __('%s');
         });
+
+        if (isset($_GET['wpml_lang'])) {
+            do_action('wpml_switch_language', $_GET['wpml_lang']);
+        }
     }
 }
