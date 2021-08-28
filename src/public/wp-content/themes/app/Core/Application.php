@@ -169,6 +169,37 @@ abstract class Application
             wp_dequeue_style('wp-block-library-theme');
             wp_dequeue_style('wc-block-style');
         }, 100);
+        
+        // Replace margin with padding to support Select2
+        if (is_user_logged_in()) {
+            add_action('wp_head', function () {
+                $type_attr = current_theme_supports('html5', 'style') ? '' : ' type="text/css"';
+                ?>
+                <style<?php echo $type_attr; ?> media="screen">
+                    html {
+                        margin-top: 0 !important;
+                        padding-top: 32px !important;
+                    }
+
+                    * html body {
+                        margin-top: 0 !important;
+                        padding-top: 32px !important;
+                    }
+
+                    @media screen and ( max-width: 782px ) {
+                        html {
+                            margin-top: 0 !important;
+                            padding-top: 46px !important;
+                        }
+
+                        * html body {
+                            margin-top: 0 !important;
+                            padding-top: 46px !important;
+                        }
+                    }
+                </style> <?php
+            }, 100);
+        }
 
         add_filter('protected_title_format', function () {
             return __('%s');
